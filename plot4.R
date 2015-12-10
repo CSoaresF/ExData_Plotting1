@@ -10,7 +10,11 @@ if(!file.exists("data/household_power_consumption.txt")) {
     unzip(zipfile="data.zip", exdir="data")
 }
 # load file to workspace
-data1 <- read.table("C:/EDA_PROJECT1/data/household_power_consumption.txt", header=TRUE, sep=";", dec=".", stringsAsFactors=FALSE)
+data1 <- read.table("C:/EDA_PROJECT1/data/household_power_consumption.txt", 
+                    header=TRUE, 
+                    sep=";", 
+                    dec=".", 
+                    stringsAsFactors=FALSE)
 
 # filter days 1 and 2 february 2007 
 data2<- subset(data1, (data1$Date == "1/2/2007" | data1$Date== "2/2/2007")) 
@@ -35,7 +39,10 @@ plot(DateTime, Voltage,
 plot(DateTime, Sub_metering_1, type="l", ylab= "Energy sub metering", xlab="")
 lines(DateTime, Sub_metering_2, type="l", col="red")
 lines(DateTime, Sub_metering_3, type="l", col="blue")
-legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, col=c("black", "red", "blue"))
+legend("topright", 
+       c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
+       lty=1, 
+       col=c("black", "red", "blue"))
 # generate graphic bottom-right
 plot(DateTime, Global_reactive_power, 
      type = "l",
