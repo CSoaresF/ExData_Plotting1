@@ -10,7 +10,9 @@ if(!file.exists("data/household_power_consumption.txt")) {
     unzip(zipfile="data.zip", exdir="data")
 }
 # load file to workspace
-data1 <- read.table("C:/EDA_PROJECT1/data/household_power_consumption.txt", header=TRUE, sep=";", dec=".", stringsAsFactors=FALSE)
+data1 <- read.table("C:/EDA_PROJECT1/data/household_power_consumption.txt", 
+                     header=TRUE, sep=";", dec=".", 
+                     stringsAsFactors=FALSE)
 
 # filter days 1 and 2 februery 2007
 data2 <- data1[data1$Date %in% c("1/2/2007", "2/2/2007"), ]
@@ -20,5 +22,8 @@ data3 <- as.numeric(data2$Global_active_power)
 
 # generate graphic
 png("plot1.png", width=480, height=480)
-hist(data3, col="red", main="GLOBAL ACTIVE POWER - days 1 and 2 fev. 2007", xlab="Global Active Power (kilowatts)")
+hist(data3, 
+     col="red", 
+     main="GLOBAL ACTIVE POWER - days 1 and 2 fev. 2007", 
+     xlab="Global Active Power (kilowatts)")
 dev.off()
