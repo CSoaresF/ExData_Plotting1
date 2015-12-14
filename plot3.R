@@ -24,7 +24,7 @@ data2$Date <- as.Date(data2$Date, format = "%d/%m/%Y")
 data2$DateTime <- as.POSIXct(paste(data2$Date, data2$Time))
 
 # generate graphic
-png("plot3.png", width = 480, height = 480)
+png("plot_3.png", width = 480, height = 480)
 plot(data2$DateTime, 
      data2$Sub_metering_1, 
      type="l", 
